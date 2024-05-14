@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shifu-helloworld
+  labels:
+    app: shifu-helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shifu-helloworld
+  template:
+    metadata:
+      labels:
+        app: shifu-helloworld
+    spec:
+      containers:
+      - name: shifu-helloworld
+        image: justlorain/shifu-helloworld
